@@ -16,7 +16,7 @@ function TagDitilePage() {
     }
   }, [tagname]);
 
-  console.log(tag);
+  //console.log(tag);
 
   if (!tag)
     return (
