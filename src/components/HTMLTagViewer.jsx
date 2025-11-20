@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Globe, Code2, Info, Zap, Settings } from "lucide-react";
+import { motion } from "framer-motion";
+
 import CodeExample from "./CodeExample";
+import Card from "./Card";
 
 export default function HTMLTagViewer({ tagData }) {
   const [language, setLanguage] = useState("bn");
@@ -12,19 +15,19 @@ export default function HTMLTagViewer({ tagData }) {
     <>
       <div className="max-w-6xl w-[97%] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
-        <div className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 mb-8  gap-4 shadow-[0_8px_32px_rgba(31,38,135,0.1)]  hover:shadow-[0_2px_40px_rgba(10,116,255,0.25)] text-white ">
+        <Card className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 mb-8  gap-4 shadow-[0_8px_32px_rgba(31,38,135,0.1)]  hover:shadow-[0_2px_40px_rgba(10,116,255,0.25)] text-white ">
           <div className=" w-full">
             <div className="flex flex-row-reverse items-center justify-between w-full">
               <button
                 onClick={() => setLanguage(language === "en" ? "bn" : "en")}
-                className="flex items-center gap-2 px-4 py-2 bg-[#a5cdf538] backdrop-blur-lg bg-opacity-10  rounded-lg transition-colors hover:shadow-[0_12px_40px_rgba(10,116,255,0.25)]"
+                className="flex items-center gap-2 px-4 py-2 bg-[#a5cdf538] bg-opacity-10  rounded-lg transition-colors hover:shadow-[0_12px_40px_rgba(10,116,255,0.25)]"
               >
                 <Globe className="w-4 h-4" />
                 <span className="font-medium">
                   {language === "en" ? "বাংলা" : "English"}
                 </span>
               </button>
-              <div className="inline-block px-3 py-1 bg-[#a5cdf538] backdrop-blur-lg bg-opacity-20 rounded-full text-sm font-medium mb-3 shadow">
+              <div className="inline-block px-3 py-1 bg-[#a5cdf538] bg-opacity-20 rounded-full text-sm font-medium mb-3 shadow">
                 {tagData?.category}
               </div>
             </div>
@@ -35,17 +38,22 @@ export default function HTMLTagViewer({ tagData }) {
               {isBengali ? tagData?.definitionBn : tagData?.definition}
             </p>
 
-            <div className="bg-[#a5cdf538] backdrop-blur-lg bg-opacity-10  rounded-xl p-4 shadow border-white border-opacity-20 mt-7 w-fit">
+            <div className="bg-[#a5cdf538] bg-opacity-10  rounded-xl p-4 shadow border-white border-opacity-20 mt-7 w-fit">
               <div className="text-sm text-blue-100 mb-1">Syntax</div>
               <code className="text-white font-mono text-lg">
                 {tagData?.syntax}
               </code>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Tab Navigation */}
-        <div className="flex gap-2 mb-6 overflow-x-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex gap-2 mb-6 overflow-x-auto"
+        >
           <button
             onClick={() => setActiveTab("overview")}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap ${
@@ -90,10 +98,16 @@ export default function HTMLTagViewer({ tagData }) {
             <Settings className="w-4 h-4" />
             {isBengali ? "অ্যাট্রিবিউটস" : "Attributes"}
           </button>
-        </div>
+        </motion.div>
 
         {/* Content Area */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8"
+        >
           {activeTab === "overview" && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -163,7 +177,7 @@ export default function HTMLTagViewer({ tagData }) {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </>
   );

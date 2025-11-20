@@ -5,6 +5,10 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import CardSliderPage from "./page/CardSliderPage.jsx";
 import TagDitilePage from "./page/TagDitilePage.jsx";
+import Introduction from "./page/Introduction.jsx";
+import Lesson1 from "./page/Lesson1.jsx";
+import Lesson2 from "./page/Lesson2.jsx";
+import ErrorPage from "./components/ErrorPage.jsx";
 
 let router = createBrowserRouter([
   {
@@ -13,11 +17,27 @@ let router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Introduction />,
+      },
+      {
+        path: "/allTag",
         element: <CardSliderPage />,
       },
       {
-        path: "/:tagname",
+        path: "/allTag/:tagname",
         element: <TagDitilePage />,
+      },
+      {
+        path: "/:error",
+        element: <ErrorPage />,
+      },
+      {
+        path: "/lesson1",
+        element: <Lesson1 />,
+      },
+      {
+        path: "/lesson2",
+        element: <Lesson2 />,
       },
     ],
   },

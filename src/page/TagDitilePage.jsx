@@ -20,7 +20,7 @@ function TagDitilePage() {
 
   if (!tag)
     return (
-      <div className="flex flex-col items-center justify-center text-center p-8 bg-white/40 backdrop-blur-md rounded-2xl border border-white/30 shadow-[0_4px_20px_rgba(10,116,255,0.1)]">
+      <div className="flex flex-col items-center justify-center text-center p-8 bg-white/40  rounded-2xl border border-white/30 shadow-[0_4px_20px_rgba(10,116,255,0.1)]">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-2">
           Oops! Tag Not Found
         </h2>

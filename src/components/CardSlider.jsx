@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Card from "./Card";
+import TagCard from "./TagCard";
 
 export default function CardSlider({ data }) {
   const scrollRef = useRef(null);
@@ -54,11 +54,11 @@ export default function CardSlider({ data }) {
           {data?.tags?.map((item, i) => (
             <Link
               key={i}
-              to={`/${item?.name}`}
+              to={`/allTag/${item?.name}`}
               className="flex gap-4 sm:gap-6 min-w-[250px] w-[75%] sm:w-[45%] md:w-[30%] lg:w-[22%]
              hover:scale-[1.03] transition-transform duration-200"
             >
-              <Card item={item} />
+              <TagCard item={item} />
             </Link>
           ))}
         </div>

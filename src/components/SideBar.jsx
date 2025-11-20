@@ -14,11 +14,14 @@ import {
   Terminal,
   Award,
   Book,
+  Tags,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 function SideBar() {
   const sidebarItems = [
-    { id: 1, title: "Introduction", icon: BookOpen, path: "#other" },
+    { id: 1, title: "Introduction", icon: BookOpen, path: "/" },
+    { id: 12, title: "All Tage", icon: Tags, path: "/allTag" },
     { id: 2, title: "HTML Basics", icon: Code, path: "/basics" },
     { id: 3, title: "Text & Headings", icon: Type, path: "/text" },
     { id: 4, title: "Links & Media", icon: Link, path: "/media" },
@@ -32,7 +35,12 @@ function SideBar() {
   ];
 
   return (
-    <section className=" flex-col bg-[#f7faff] w-[40%] max-w-[300px] rounded-2xl gap-4 p-4 mt-20 mb-4 overflow-hidden min-h-[calc(100vh-87px)] shadow-[0_4px_12px_rgba(0,0,0,0.05)] hidden md:flex">
+    <motion.section
+      initial={{ opacity: 0, x: -100 }} // start hidden, left
+      animate={{ opacity: 1, x: 0 }} // animate to visible
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className=" flex-col bg-[#f7faff] w-[40%] max-w-[300px] rounded-2xl gap-4 p-4 mt-20 mb-4 overflow-hidden min-h-[calc(100vh-87px)] shadow-[0_4px_12px_rgba(0,0,0,0.05)] hidden md:flex"
+    >
       <ul className="space-y-2">
         {sidebarItems.map((item) => {
           const Icon = item.icon; // assign the actual component
@@ -49,7 +57,7 @@ function SideBar() {
           );
         })}
       </ul>
-    </section>
+    </motion.section>
   );
 }
 

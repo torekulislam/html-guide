@@ -1,30 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { X, Search, Hash, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { htmlTagsDataDitiles } from "../htmlTagsData";
 import { Link } from "react-router-dom";
 
-function SearchTag({ show }) {
+function SearchTag({ show, setShow }) {
   useEffect(() => {
-    show ?? document.body.style.height("100vh");
+    document.body.style.overflow = show ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto"; // cleanup
+    };
   }, [show]);
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  // ✅ Calculate directly - no useState needed!
   const elements = htmlTagsDataDitiles.filter((item) =>
     item?.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
   );
 
+  if (!show) return null; //  hide completely when closed
+
   return (
-    <div className="h-screen w-full fixed inset-0 z-30">
+    <div className="h-screen w-full fixed inset-0 z-999">
       {/* Backdrop */}
       <div
-        onClick={() => show(false)}
+        onClick={() => setShow(false)}
         className="h-full w-full bg-[#08224928] backdrop-blur-sm"
       ></div>
 
       {/* Modal */}
-      <div className="fixed inset-0 flex items-start justify-center pt-20 pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0, y: -100, scale: 0 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="fixed inset-0 flex items-start justify-center pt-20 pointer-events-none"
+      >
         <div className="w-[90%] max-w-[600px] bg-white shadow-2xl rounded-2xl pointer-events-auto">
           {/* Search Input */}
           <div className="w-full flex items-center border-gray-300 border-b px-5 py-4 gap-3">
@@ -38,7 +49,7 @@ function SearchTag({ show }) {
               className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base"
             />
             <button
-              onClick={() => show(false)}
+              onClick={() => setShow(false)}
               aria-label="Close"
               className="text-gray-500 hover:text-gray-700 transition-colors"
             >
@@ -46,10 +57,10 @@ function SearchTag({ show }) {
             </button>
           </div>
 
-          {/* Results Area */}
+          {/* Results */}
           <div className="w-full min-h-[200px] max-h-[400px] overflow-y-auto p-6">
             {searchQuery.trim() === "" ? (
-              <div className="text-gray-400 text-center py-12 text-base">
+              <div className="text-gray-400 text-center py-12">
                 No recent searches
               </div>
             ) : elements.length > 0 ? (
@@ -57,31 +68,28 @@ function SearchTag({ show }) {
                 {elements.map((item, index) => (
                   <Link
                     key={index}
-                    to={`/${item?.name}`}
-                    aria-label={`${item?.name}-teg`}
-                    onClick={() => show(false)}
-                    className="group p-3 hover:bg-sky-500 rounded-lg cursor-pointer transition flex items-center justify-baseline gap-4"
+                    to={`/allTag/${item?.name}`}
+                    onClick={() => setShow(false)}
+                    className="group p-3 hover:bg-sky-500 rounded-lg cursor-pointer transition flex items-center gap-4"
                   >
-                    <div className=" border border-[#d4cfcf93]  p-1 rounded group-hover:shadow-sky-400">
-                      <Hash className="text-gray-500 group-hover:text-gray-100  h-5 w-5 font-extralight stroke-1 " />
+                    <div className="border border-[#d4cfcf93] p-1 rounded group-hover:shadow-sky-400">
+                      <Hash className="text-gray-500 group-hover:text-gray-100 h-5 w-5 stroke-1" />
                     </div>
-                    <div className=" flex-1 text-gray-400 font-semibold group-hover:text-gray-200">
+                    <div className="flex-1 text-gray-400 font-semibold group-hover:text-gray-200">
                       {item?.name}
                     </div>
-                    <div className="">
-                      <ChevronRight className="w-4 h-4 text-gray-400 font-semibold group-hover:text-gray-200" />
-                    </div>
+                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-200" />
                   </Link>
                 ))}
               </div>
             ) : (
-              <div className="text-gray-400 text-center py-12 text-base">
+              <div className="text-gray-400 text-center py-12">
                 No results found for "{searchQuery}"
               </div>
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

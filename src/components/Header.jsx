@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { Menu, X, Search, CodeXml } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SearchTag from "./SearchTag";
 function Header() {
   const [showSearchManue, setShowSearchManue] = useState(false);
   return (
-    <header>
-      {showSearchManue && <SearchTag show={setShowSearchManue} />}
-      <div className=" max-w-[98%] sm:max-w-[98%] mx-auto h-20 bg-white rounded-2xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(10,116,255,0.15)] transition flex z-20 items-center justify-between text-center  hover:translate-y-1 fixed inset-0  mb-3 duration-300 overflow-hidden gap4">
+    <motion.header
+      initial={{ opacity: 0, y: -30 }} // start hidden, left
+      animate={{ opacity: 1, y: -10 }} // animate to visible
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      {showSearchManue && (
+        <SearchTag show={showSearchManue} setShow={setShowSearchManue} />
+      )}
+
+      <div className=" max-w-[98%] sm:max-w-[98%] mx-auto h-20 bg-white rounded-2xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(10,116,255,0.15)] transition flex z-20 items-center justify-between text-center  hover:translate-y-1 fixed inset-0  mb-3 mt-4  duration-300 overflow-hidden gap-4">
         <Link to={"/"}>
           <h2 className="text-3xl font-bold font-[Yatra_One] text-[#0250b6]">
             {"<html/>"}
@@ -23,16 +31,9 @@ function Header() {
             <Search className="w-4 h-4" />
             Search tag
           </button>
-
-          {/* <input
-            onChange={""}
-            type="text"
-            placeholder="Search tag..."
-            className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base hidden sm:block"
-          /> */}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
 
