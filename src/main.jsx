@@ -32,11 +32,11 @@ let router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path: "/lesson1",
+        path: "/tutorial/lesson1",
         element: <Lesson1 />,
       },
       {
-        path: "/lesson2",
+        path: "/tutorial/lesson2",
         element: <Lesson2 />,
       },
     ],

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import TagCard from "./TagCard";
+import { motion } from "framer-motion";
 
 export default function CardSlider({ data }) {
   const scrollRef = useRef(null);
@@ -23,7 +24,12 @@ export default function CardSlider({ data }) {
   };
 
   return (
-    <div className=" w-full  px-4 md:px-10 text-[#1E293B] ">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className=" w-full  px-4 pt-7 md:px-10 text-[#1E293B] overflow-hidden"
+    >
       <div className={`mx-auto ${data?.links}`} id={data?.links}>
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
@@ -47,7 +53,11 @@ export default function CardSlider({ data }) {
         </div>
 
         {/* Slider */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           ref={scrollRef}
           className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden py-4 px-3"
         >
@@ -61,8 +71,8 @@ export default function CardSlider({ data }) {
               <TagCard item={item} />
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

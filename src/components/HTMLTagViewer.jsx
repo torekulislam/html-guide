@@ -165,12 +165,11 @@ export default function HTMLTagViewer({ tagData }) {
                     <p className="text-gray-700 mb-4">
                       {isBengali ? attr?.descriptionBn : attr?.description}
                     </p>
-                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 ">
                       <div className="text-xs text-gray-500 mb-2">EXAMPLE</div>
-                      {/* <code className="text-blue-600 font-mono">
-                        {attr.example}
-                            </code> */}
-                      <CodeExample code={attr?.example} />
+                      <div className="relative">
+                        <CodeExample code={attr?.example} />
+                      </div>
                     </div>
                   </div>
                 ))}

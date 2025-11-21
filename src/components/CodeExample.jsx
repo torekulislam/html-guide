@@ -32,7 +32,7 @@ export default function CodeExample({ code }) {
   };
 
   return (
-    <div className="relative bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl shadow-inner overflow-x-auto overflow-y-auto max-h-[400px] p-4">
+    <div className="relative bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl shadow-inner overflow-x-auto overflow-y-auto max-h-[400px] p-4 ">
       {/* Copy button */}
       <button
         onClick={handleCopy}

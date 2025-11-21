@@ -22,16 +22,16 @@ function SearchTag({ show, setShow }) {
   if (!show) return null; //  hide completely when closed
 
   return (
-    <div className="h-screen w-full fixed inset-0 z-999">
+    <div className="h-screen w-full relative  z-999 ">
       {/* Backdrop */}
       <div
         onClick={() => setShow(false)}
-        className="h-full w-full bg-[#08224928] backdrop-blur-sm"
+        className="h-[110vh] w-full bg-[#062a5f38] backdrop-blur-sm"
       ></div>
 
       {/* Modal */}
       <motion.div
-        initial={{ opacity: 0, y: -100, scale: 0 }}
+        initial={{ opacity: 0, y: -400, scale: 0 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="fixed inset-0 flex items-start justify-center pt-20 pointer-events-none"

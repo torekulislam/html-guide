@@ -1,18 +1,18 @@
-import React from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-
 export default function Card({ children, className = "", animate = true }) {
+  const location = useLocation(); // SPA route change
   return animate ? (
     <motion.div
+      key={location.pathname} // remount on route change
       initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }} // animate once when 50% of card is in view
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`rounded-3xl shadow-xl  ${className}`}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "circInOut" }}
+      className={`rounded-3xl shadow-xl ${className}`}
     >
       {children}
     </motion.div>
   ) : (
-    <div className={`rounded-3xl p-8 shadow-xl  ${className}`}>{children}</div>
+    <div className={`rounded-3xl p-8 shadow-xl ${className}`}>{children}</div>
   );
 }

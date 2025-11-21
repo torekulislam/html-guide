@@ -26,7 +26,7 @@ function Header() {
             aria-label="Search"
             type="button"
             onClick={() => setShowSearchManue((prv) => !prv)}
-            className="text-blue-500 hover:text-blue-600 transition-colors md:mr-2 flex items-center gap-1 text-sm w-fit max-w-md bg-gray-50 border border-blue-200 rounded-full hover:shadow p-2 md:px-4 md:py-2 focus-within:ring-2 focus-within:ring-blue-400 "
+            className="text-blue-500 hover:text-blue-600 transition-colors md:mr-2 flex items-center gap-1 text-md w-fit max-w-md bg-gray-50 border border-blue-200 rounded-full hover:shadow p-2 md:px-4 md:py-2 focus-within:ring-2 focus-within:ring-blue-400 "
           >
             <Search className="w-4 h-4" />
             Search tag

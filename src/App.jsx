@@ -6,26 +6,24 @@ import Header from "./components/Header";
 import { Outlet } from "react-router";
 import SideBar from "./components/SideBar";
 function App() {
-  const [open, setOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("overview");
-
   // console.log(searchRef);
 
   return (
     <>
-      <div className="min-h-screen bg-[#eaf0f5] w-full ">
+      <div className="min-h-screen bg-[#eaf0f5] w-full relative ">
+        {/* <div className="h-[110vh] w-full bg-[#08224928] backdrop-blur-sm"></div> */}
         <Header />
 
-        <section className="flex gap-4 items-start min-h-screen p-4">
+        <section className="flex gap-4 items-start p-4">
           <SideBar className="w-64" />
-          <motion.section
+          <motion.main
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "backInOut" }}
             className="flex flex-col gap-4 w-full bg-[#f7faff] rounded-2xl p-4  mt-20 mb-4 shadow-lg overflow-auto"
           >
             <Outlet />
-          </motion.section>
+          </motion.main>
         </section>
 
         {/* <CodeExample /> */}
