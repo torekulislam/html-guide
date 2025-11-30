@@ -59,7 +59,7 @@ export default function CardSlider({ data }) {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           ref={scrollRef}
-          className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden py-4 px-3"
+          className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar-x py-4 px-3"
         >
           {data?.tags?.map((item, i) => (
             <Link
