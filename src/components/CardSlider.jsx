@@ -55,8 +55,7 @@ export default function CardSlider({ data }) {
         {/* Slider */}
         <motion.div
           initial={{ opacity: 0, x: 200 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           ref={scrollRef}
           className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar-x py-4 px-3"
