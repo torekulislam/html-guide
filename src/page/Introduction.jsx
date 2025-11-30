@@ -7,30 +7,21 @@ import Card from "../components/Card";
 //     <pre className="text-green-400 font-mono text-sm">{code}</pre>
 //   </div>
 // );
-
+import { useSelector } from "react-redux";
 function Introduction() {
-  const [isBangla, setIsBangla] = useState(false);
-
+  const language = useSelector((state) => state.htmlStore.language);
+  const isBangla = language === "BN";
   return (
     <div className="min-h-screen ">
       {/* Header */}
 
-      <div className="max-w-6xl mx-auto px-6 py-12 space-y-12">
+      <div className="max-w-6xl mx-auto sm:px-8 sm:py-12 py-2 space-y-12">
         {/* Hero Section */}
-        <Card className="bg-linear-to-r from-blue-600 to-blue-500 rounded-2xl p-8 text-white shadow-xl">
+        <Card className="bg-linear-to-r from-blue-600 to-blue-500  text-white ">
           <div className="flex gap-2 justify-between items-start">
             <h2 className="text-4xl font-bold mb-4">
               {isBangla ? "HTML ভূমিকা" : "HTML Introduction"}
             </h2>
-            <button
-              onClick={() => setIsBangla(!isBangla)}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded-lg transition-all"
-            >
-              <Globe className="w-4 h-4 text-blue-600" />
-              <span className="font-medium text-blue-600">
-                {isBangla ? "English" : "বাংলা"}
-              </span>
-            </button>
           </div>
           <p className="text-xl text-blue-50">
             {isBangla
@@ -40,7 +31,7 @@ function Introduction() {
         </Card>
 
         {/* What is HTML */}
-        <Card className="bg-white rounded-2xl p-8 shadow-md border border-blue-100">
+        <Card className="bg-white   shadow-md border border-blue-100">
           <div className="flex items-center gap-3 mb-6">
             <BookOpen className="w-7 h-7 text-blue-600" />
             <h3 className="text-3xl font-bold text-gray-800">
@@ -76,7 +67,7 @@ function Introduction() {
         </Card>
 
         {/* Simple Example */}
-        <Card className="bg-white rounded-2xl p-8 shadow-md border border-blue-100">
+        <Card className="bg-white  border border-blue-100">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">
             {isBangla ? "একটি সহজ HTML ডকুমেন্ট" : "A Simple HTML Document"}
           </h3>
@@ -94,7 +85,7 @@ function Introduction() {
           />
         </Card>
         {/* Example Explained */}
-        <Card className="bg-white rounded-lg border border-slate-200 p-6">
+        <Card className="bg-white  border border-slate-200 p-6">
           <h2 className="text-xl font-semibold text-slate-900 mb-4">
             {isBangla ? "উদাহরণ ব্যাখ্যা" : "Example Explained"}
           </h2>
@@ -173,7 +164,7 @@ function Introduction() {
         </Card>
 
         {/* HTML Element Structure */}
-        <Card className="bg-white rounded-2xl p-8 shadow-md border border-blue-100">
+        <Card className="bg-white   border border-blue-100">
           <h3 className="text-2xl font-bold text-gray-800 mb-6">
             {isBangla ? "HTML এলিমেন্ট কী?" : "What is an HTML Element?"}
           </h3>
@@ -246,7 +237,7 @@ function Introduction() {
         </Card>
 
         {/* Page Structure */}
-        <Card className="bg-white rounded-2xl p-8 shadow-md border border-blue-100">
+        <Card className="bg-white  border border-blue-100">
           <div className="flex items-center gap-3 mb-6">
             <Layout className="w-7 h-7 text-blue-600" />
             <h3 className="text-2xl font-bold text-gray-800">
@@ -280,7 +271,7 @@ function Introduction() {
         </Card>
 
         {/* Browser Info */}
-        <Card className="bg-linear-to-br from-blue-600 to-blue-500 rounded-2xl p-8 text-white shadow-xl">
+        <Card className="bg-linear-to-br from-blue-600 to-blue-500 text-white ">
           <div className="flex items-center gap-3 mb-4">
             <Chrome className="w-8 h-8" />
             <h3 className="text-2xl font-bold">

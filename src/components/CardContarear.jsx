@@ -3,7 +3,7 @@ import Card from "./Card";
 
 function CardContainer({ children }) {
   return (
-    <Card className="bg-white/50 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-white/30">
+    <Card className="bg-white/50 rounded-3xl p-4 sm:p-8 shadow-lg border border-white/30">
       {children}
     </Card>
   );

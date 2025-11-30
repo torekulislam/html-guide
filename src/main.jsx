@@ -3,12 +3,18 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import CardSliderPage from "./page/CardSliderPage.jsx";
-import TagDitilePage from "./page/TagDitilePage.jsx";
-import Introduction from "./page/Introduction.jsx";
-import Lesson1 from "./page/Lesson1.jsx";
-import Lesson2 from "./page/Lesson2.jsx";
-import ErrorPage from "./components/ErrorPage.jsx";
+import { store } from "./store/store.js";
+
+import { Provider } from "react-redux";
+
+import {
+  Introduction,
+  CardSliderPage,
+  TagDitilePage,
+  Lesson1,
+  Lesson2,
+  ErrorPage,
+} from "./page";
 
 let router = createBrowserRouter([
   {
@@ -45,6 +51,8 @@ let router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );

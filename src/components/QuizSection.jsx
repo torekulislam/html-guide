@@ -12,7 +12,7 @@ function QuizSection({ quiz, isBangla }) {
     quiz.filter((q) => quizAnswers[q.id] === q.correct).length;
 
   return (
-    <Card className="bg-sky-50 backdrop-blur-2xl  border shadow-sm border-blue-200 rounded-xl p-8">
+    <Card className="bg-sky-50 backdrop-blur-2xl  border shadow-sm border-blue-200 rounded-xl p-4 py-8 sm:p-8">
       <div className="flex gap-3 items-center mb-4">
         <BookOpen className="w-7 h-7 text-blue-600" />
         <h2 className="text-2xl font-bold text-slate-900">

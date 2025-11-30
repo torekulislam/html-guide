@@ -10,14 +10,51 @@ h4 {
   font-family: "Dosis", sans-serif;
 }
 
-/* Hide scrollbar for Chrome, Safari and Edge */
-.scrollbar-hidden::-webkit-scrollbar {
+/* --- Hide horizontal scrollbar --- */
+::-webkit-scrollbar:horizontal {
+  height: 0 !important;
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
-.scrollbar-hidden {
+/* --- Vertical scrollbar visible (blue) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  /* light gray */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  /* blue scrollbar */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+  /* darker blue */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #e5e7eb;
+}
+
+/* Hide horizontal scrollbar but keep scroll working */
+.hide-scrollbar-x {
   scrollbar-width: none;
+  /* Firefox */
   -ms-overflow-style: none;
-  /* IE 10+ */
+  /* Internet Explorer */
+}
+
+.hide-scrollbar-x::-webkit-scrollbar {
+  height: 0px;
+  /* Hide horizontal scrollbar */
+  display: none;
+  /* Safari & Chrome */
 }

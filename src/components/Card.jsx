@@ -7,8 +7,8 @@ export default function Card({ children, className = "", animate = true }) {
       key={location.pathname} // remount on route change
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "circInOut" }}
-      className={`rounded-3xl shadow-xl ${className}`}
+      transition={{ duration: 1, ease: "anticipate" }}
+      className={`rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-xl ${className}`}
     >
       {children}
     </motion.div>

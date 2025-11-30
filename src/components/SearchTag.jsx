@@ -67,6 +67,7 @@ function SearchTag({ show, setShow }) {
               <div className="space-y-2">
                 {elements.map((item, index) => (
                   <Link
+                    autoFocus
                     key={index}
                     to={`/allTag/${item?.name}`}
                     onClick={() => setShow(false)}

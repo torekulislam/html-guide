@@ -5,9 +5,10 @@ import LesonHading from "../components/LesonHading";
 import QuizSection from "../components/QuizSection";
 import HomeWork from "../components/HomeWork";
 import CardContarear from "../components/CardContarear";
-
+import { useSelector } from "react-redux";
 function Lesson2() {
-  const [isBangla, setIsBangla] = useState(false);
+  const language = useSelector((state) => state.htmlStore.language);
+  const isBangla = language === "BN";
 
   const quiz = [
     {
@@ -58,7 +59,6 @@ function Lesson2() {
     <div className="min-h-screen">
       {/* Header */}
       <LesonHading
-        setIsBangla={setIsBangla}
         isBangla={isBangla}
         Icon={Type}
         banglaSub={"পাঠ ২: টেক্সট ফরম্যাটিং ও লিংক"}
@@ -67,7 +67,7 @@ function Lesson2() {
       />
 
       {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-6 py-10 space-y-12">
+      <div className="max-w-5xl mx-auto sm:px-6 py-10 space-y-12">
         {/* Text Formatting Section */}
         <CardContarear>
           <h2 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-cyan-400">

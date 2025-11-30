@@ -14,10 +14,11 @@ import QuizSection from "../components/QuizSection";
 import CardContainer from "../components/CardContarear";
 import HomeWork from "../components/HomeWork";
 import Card from "../components/Card";
+import { useSelector } from "react-redux";
 
 function Lesson1() {
-  const [isBangla, setIsBangla] = useState(false);
-
+  const language = useSelector((state) => state.htmlStore.language);
+  const isBangla = language === "BN";
   const quiz = [
     {
       id: 1,
@@ -65,18 +66,17 @@ function Lesson1() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen ">
       {/* Header */}
 
       <LesonHading
-        setIsBangla={setIsBangla}
         isBangla={isBangla}
         banglaSub={"পাঠ ১: HTML বেসিক"}
         engSub={"Beginner Level"}
         titel={"Lesson 1: HTML Basics"}
       />
 
-      <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
+      <div className="max-w-5xl mx-auto md:px-6 py-10 space-y-10">
         {/* Intro */}
         <section>
           <h1 className="text-3xl font-bold text-slate-900 mb-3">
@@ -119,7 +119,7 @@ function Lesson1() {
         {/* Document Structure */}
 
         <CardContainer>
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">
+          <h2 className="text-xl font-semibold text-slate-900 mb-4 ">
             {isBangla ? "ডকুমেন্ট স্ট্রাকচার" : "Document Structure"}
           </h2>
 
