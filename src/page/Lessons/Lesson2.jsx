@@ -1,59 +1,22 @@
 import React, { useState } from "react";
-import { Type, Link2, BookOpen, Clipboard } from "lucide-react";
-import CodeExample from "../components/CodeExample";
-import LesonHading from "../components/LesonHading";
-import QuizSection from "../components/QuizSection";
-import HomeWork from "../components/HomeWork";
-import CardContarear from "../components/CardContarear";
 import { useSelector } from "react-redux";
+import { Type, Link2, BookOpen, Clipboard } from "lucide-react";
+
+import CodeExample from "../../components/CodeExample";
+import LesonHading from "../../components/LesonHading";
+import QuizSection from "../../components/QuizSection";
+import CardContarear from "../../components/CardContarear";
+import HomeWork from "../../components/HomeWork";
+import Card from "../../components/Card";
+import { lessons } from "../../data/htmlLessonData";
+import LessonNav from "../../components/LessonNav";
+
 function Lesson2() {
   const language = useSelector((state) => state.htmlStore.language);
   const isBangla = language === "BN";
 
-  const quiz = [
-    {
-      id: 1,
-      question: isBangla
-        ? "Bold করার ট্যাগ কোনটি?"
-        : "Which tag makes text bold?",
-      options: ["<b>", "<i>", "<u>"],
-      correct: 0,
-    },
-    {
-      id: 2,
-      question: isBangla
-        ? "Italic টেক্সট কোন ট্যাগ দিয়ে করা হয়?"
-        : "Which tag makes text italic?",
-      options: ["<i>", "<strong>", "<mark>"],
-      correct: 0,
-    },
-    {
-      id: 3,
-      question: isBangla
-        ? "একটি লিংকের জন্য কোন ট্যাগ ব্যবহার করা হয়?"
-        : "Which tag is used for creating a link?",
-      options: ["<a>", "<link>", "<href>"],
-      correct: 0,
-    },
-    {
-      id: 4,
-      question: isBangla
-        ? "Underline এর জন্য কোন ট্যাগ?"
-        : "Which tag creates underline?",
-      options: ["<u>", "<line>", "<span>"],
-      correct: 0,
-    },
-  ];
-
-  const assignment = [
-    { en: "Create an HTML file", bn: "একটি HTML ফাইল তৈরি করুন" },
-    { en: "Write one paragraph", bn: "একটি paragraph লিখুন" },
-    {
-      en: "Use bold, italic, and underline",
-      bn: "Bold, italic ও underline ব্যবহার করুন",
-    },
-    { en: "Add a Google link", bn: "একটি Google লিংক দিন" },
-  ];
+  const quiz = lessons?.[1]?.quiz;
+  const assignment = lessons?.[1]?.assignment;
 
   return (
     <div className="min-h-screen">
@@ -133,12 +96,13 @@ function Lesson2() {
         </CardContarear>
 
         {/* Quiz Section */}
-
         <QuizSection quiz={quiz} isBangla={isBangla} />
 
         {/* Homework Section */}
-
         <HomeWork data={assignment} isBangla={isBangla} />
+
+        {/* Next lesson or previous lesson section-- */}
+        <LessonNav lessonId={2} />
       </div>
     </div>
   );

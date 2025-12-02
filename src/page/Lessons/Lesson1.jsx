@@ -8,62 +8,22 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
-import CodeExample from "../components/CodeExample";
-import LesonHading from "../components/LesonHading";
-import QuizSection from "../components/QuizSection";
-import CardContainer from "../components/CardContarear";
-import HomeWork from "../components/HomeWork";
-import Card from "../components/Card";
+import CodeExample from "../../components/CodeExample";
+import LesonHading from "../../components/LesonHading";
+import QuizSection from "../../components/QuizSection";
+import CardContainer from "../../components/CardContarear";
+import HomeWork from "../../components/HomeWork";
+import Card from "../../components/Card";
 import { useSelector } from "react-redux";
+import { lessons } from "../../data/htmlLessonData";
+import LessonNav from "../../components/LessonNav";
 
 function Lesson1() {
   const language = useSelector((state) => state.htmlStore.language);
   const isBangla = language === "BN";
-  const quiz = [
-    {
-      id: 1,
-      question: isBangla ? "HTML এর পূর্ণরূপ কি?" : "What does HTML stand for?",
-      options: [
-        "Hyper Text Markup Language",
-        "High Tech Modern Language",
-        "Home Tool Markup Language",
-      ],
-      correct: 0,
-    },
-    {
-      id: 2,
-      question: isBangla
-        ? "HTML পৃষ্ঠার মূল এলিমেন্ট কোনটি?"
-        : "What is the root element of an HTML page?",
-      options: ["<body>", "<html>", "<head>"],
-      correct: 1,
-    },
-    {
-      id: 3,
-      question: isBangla
-        ? "কোন ট্যাগটি HTML5 ডকুমেন্ট ঘোষণা করে?"
-        : "Which tag declares an HTML5 document?",
-      options: ["<!DOCTYPE html>", "<html5>", "<meta>"],
-      correct: 0,
-    },
-    {
-      id: 4,
-      question: isBangla
-        ? "দৃশ্যমান কন্টেন্ট কোথায় থাকে?"
-        : "Where does visible content go?",
-      options: ["<head>", "<title>", "<body>"],
-      correct: 2,
-    },
-  ];
-  const assignment = [
-    { en: "Create an HTML file", bn: "একটি HTML ফাইল তৈরি করুন" },
-    { en: "Write one paragraph", bn: "একটি paragraph লিখুন" },
-    {
-      en: "Use bold, italic, and underline",
-      bn: "Bold, italic ও underline ব্যবহার করুন",
-    },
-    { en: "Add a Google link", bn: "একটি Google লিংক দিন" },
-  ];
+
+  const quiz = lessons?.[0]?.quiz;
+  const assignment = lessons?.[0]?.assignment;
 
   return (
     <div className="min-h-screen ">
@@ -139,12 +99,13 @@ function Lesson1() {
         </CardContainer>
 
         {/* Quiz Section */}
-
         <QuizSection quiz={quiz} isBangla={isBangla} />
 
         {/* Homework */}
-
         <HomeWork data={assignment} isBangla={isBangla} />
+
+        {/* Next lesson or previous lesson section-- */}
+        <LessonNav lessonId={1} />
       </div>
     </div>
   );

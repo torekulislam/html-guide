@@ -15,12 +15,12 @@ function App() {
         <Header />
 
         <section className="flex gap-4 items-start py-4 p-1 sm:p-4 ">
-          <SideBar className="w-64" />
+          <SideBar className="w-64" setShow={() => false} />
           <motion.main
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "backInOut" }}
-            className="flex flex-col gap-4 w-full bg-[#f2f7ff] rounded-2xl p-4  mt-20 mb-4 shadow-lg overflow-auto"
+            className="flex flex-col gap-4 w-full min-h-[88vh] bg-[#f2f7ff] rounded-2xl p-4  mt-20 mb-4 shadow-lg overflow-auto"
           >
             <Outlet />
           </motion.main>

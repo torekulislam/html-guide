@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { X, Search, Hash, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { htmlTagsDataDitiles } from "../htmlTagsData";
+import { htmlTagsDataDitiles } from "../data/htmlTagsData";
 import { Link } from "react-router-dom";
 
 function SearchTag({ show, setShow }) {

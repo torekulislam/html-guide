@@ -33,7 +33,7 @@ export default function CardSlider({ data }) {
       <div className={`mx-auto ${data?.links}`} id={data?.links}>
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#0A74FF]">
+          <h3 className="text-[20px] sm:text-3xl font-bold text-[#0A74FF]">
             {data?.titel}
           </h3>
           <div className="flex gap-3 shrink-0">

@@ -32,8 +32,8 @@ export default function CodeExample({ code }) {
   };
 
   return (
-    <div className="bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-hidden max-h-[400px] mt-4">
-      {/* FLEX TOP BAR — replaces relative/absolute */}
+    <div className="bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-hidden max-h-[400px] my-4">
+      {/* Copy button - to copy code*/}
       <div className="flex justify-end items-center px-4 py-2 bg-[#262626] border-b border-[#333]">
         <button
           onClick={handleCopy}
@@ -52,7 +52,7 @@ export default function CodeExample({ code }) {
       </div>
 
       <pre
-        className="whitespace-pre-wrap bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-x-auto overflow-y-auto max-h-[400px] p-4"
+        className="whitespace-pre-wrap bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-x-auto overflow-y-auto max-h-[400px] p-4  pb-15"
         dangerouslySetInnerHTML={{ __html: highlighted }}
       />
     </div>

@@ -9,6 +9,7 @@ function QuizSection({ quiz, isBangla }) {
     setQuizAnswers({ ...quizAnswers, [id]: idx });
 
   const calculateScore = () =>
+    //Answer calculate
     quiz.filter((q) => quizAnswers[q.id] === q.correct).length;
 
   return (
@@ -26,7 +27,7 @@ function QuizSection({ quiz, isBangla }) {
           className="bg-white border-b border-slate-200 p-4 rounded-lg  mb-5 shadow hover:shadow-xs duration-300"
         >
           <p className="font-semibold">
-            {index + 1}. {q.question}
+            {index + 1}. {isBangla ? q?.question?.bn : q?.question?.en}
           </p>
 
           {q.options.map((o, i) => (

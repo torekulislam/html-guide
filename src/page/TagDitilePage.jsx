@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import HTMLTagViewer from "../components/HTMLTagViewer";
-import { htmlTagsDataDitiles } from "../htmlTagsData";
+import { htmlTagsDataDitiles } from "../data/htmlTagsData";
 import { useParams } from "react-router-dom";
+import Card from "../components/Card";
 
 function TagDitilePage() {
   const { tagname } = useParams();
@@ -20,7 +21,7 @@ function TagDitilePage() {
 
   if (!tag)
     return (
-      <div className="flex flex-col items-center justify-center text-center p-8 bg-white/40  rounded-2xl border border-white/30 shadow-[0_4px_20px_rgba(10,116,255,0.1)]">
+      <Card className="flex flex-col items-center justify-center text-center p-8 bg-white/40  rounded-2xl border border-white/30 shadow-[0_4px_20px_rgba(10,116,255,0.1)]">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-2">
           Oops! Tag Not Found
         </h2>
@@ -28,7 +29,7 @@ function TagDitilePage() {
           Sorry 😅, my database doesn’t have this tag yet. Check back soon — I’m
           still learning new HTML tricks!
         </p>
-      </div>
+      </Card>
     );
   return (
     <div>

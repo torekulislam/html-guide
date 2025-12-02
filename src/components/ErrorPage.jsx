@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ErrorPage() {
   return (
+    // this page going to be apaiear if anye page not found
     <div className=" overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}

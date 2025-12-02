@@ -21,9 +21,12 @@ function Header() {
       animate={{ opacity: 1, y: -10 }} // animate to visible
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
+      {/* Searceh Tabe section */}
       {showSearchManue && (
         <SearchTag show={showSearchManue} setShow={setShowSearchManue} />
       )}
+
+      {/* Side Bar section */}
       {showSideBar && <SideBar isHiden={false} setShow={setShowSideBar} />}
 
       {showSideBar && (
@@ -34,13 +37,17 @@ function Header() {
         ></div>
       )}
 
+      {/* main nav bar start heare...> */}
+
       <div className=" max-w-[96%] sm:max-w-[98%] mx-auto h-20 bg-white rounded-2xl p-5 sm:p-8 shadow-[0_4px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(10,116,255,0.15)] transition flex z-20 items-center justify-between text-center  hover:translate-y-1 fixed inset-0  mb-3 mt-4  duration-300 overflow-hidden gap-4">
+        {/* --Logo section. */}
         <Link to={"/"}>
           <h2 className="text-3xl font-bold font-[Yatra_One] text-[#0250b6]">
             {"<html/>"}
           </h2>
         </Link>
         <div className=" flex gap-2">
+          {/* --Search button section-- */}
           <button
             aria-label="Search"
             type="button"
@@ -49,9 +56,9 @@ function Header() {
           >
             <Search className="w-5 h-5 sm:w-4 sm:h-4" />
             <p className=" hidden sm:block">Search tag</p>
-            {/*  */}
           </button>
 
+          {/* Menu button section-- */}
           <button
             aria-label="Menu "
             type="button"

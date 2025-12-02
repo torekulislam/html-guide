@@ -115,7 +115,7 @@ export default function HTMLTagViewer({ tagData }) {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {isBangla ? "কোড উদাহরণ" : "Code Example"}
               </h2>
-              <div className="bg-linear-to-br from-gray-900 to-gray-800 rounded-xl p-6 overflow-x-auto">
+              <div className="rounded-xl p-2 overflow-x-auto">
                 <CodeExample code={tagData?.codeExample} />
               </div>
             </div>

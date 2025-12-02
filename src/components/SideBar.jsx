@@ -33,45 +33,146 @@ function SideBar({ isHiden = true, setShow }) {
     setOpenId(openId === id ? null : id);
   };
 
+  // const sidebarItems = [
+  //   { id: 1, title: "Introduction", icon: BookOpen, path: "/" },
+
+  //   {
+  //     id: 2,
+  //     title: "Tutorial",
+  //     icon: BookOpen,
+  //     // path: "/tutorial",
+
+  //     children: [
+  //       {
+  //         id: 2.1,
+  //         title: "Lesson 1",
+
+  //         path: "/tutorial/lesson1",
+  //       },
+  //       {
+  //         id: 2.2,
+  //         title: "Lesson 2",
+
+  //         path: "/tutorial/lesson2",
+  //       },
+  //     ],
+  //   },
+  //   { id: 12, title: "All Tage", icon: Tags, path: "/allTag" },
+  //   // { id: 2, title: "HTML Basics", icon: Code, path: "/basics" },
+  //   // { id: 3, title: "Text & Headings", icon: Type, path: "/text" },
+  //   // { id: 4, title: "Links & Media", icon: LinkIcon, path: "/media" },
+  //   // { id: 5, title: "Lists", icon: List, path: "/lists" },
+  //   // { id: 6, title: "Forms", icon: FormInput, path: "/forms" },
+  //   // { id: 7, title: "Tables", icon: Table, path: "/tables" },
+  //   // { id: 8, title: "Semantic Tags", icon: Layout, path: "/semantic" },
+  //   // { id: 9, title: "Practice Playground", icon: Terminal, path: "/practice" },
+  //   // { id: 10, title: "Quizzes", icon: Award, path: "/quiz" },
+  //   // { id: 11, title: "Resources", icon: Book, path: "/resources" },
+  // ];
   const sidebarItems = [
-    { id: 1, title: "Introduction", icon: BookOpen, path: "/" },
+    {
+      id: 1,
+      title: "Introduction",
+      titleBn: "ভূমিকা",
+      icon: BookOpen,
+      path: "/",
+    },
 
     {
-      id: 13,
+      id: 2,
       title: "Tutorial",
+      titleBn: "টিউটোরিয়াল",
       icon: BookOpen,
-      // path: "/tutorial",
 
       children: [
         {
-          id: 13.1,
+          id: 2.1,
           title: "Lesson 1",
-
+          titleBn: "পাঠ ১",
           path: "/tutorial/lesson1",
         },
         {
-          id: 13.2,
+          id: 2.2,
           title: "Lesson 2",
-
+          titleBn: "পাঠ ২",
           path: "/tutorial/lesson2",
+        },
+        {
+          id: 2.3,
+          title: "Lesson 3",
+          titleBn: "পাঠ ৩",
+          path: "/tutorial/lesson3",
+        },
+        {
+          id: 2.4,
+          title: "Lesson 4",
+          titleBn: "পাঠ ৪",
+          path: "/tutorial/lesson4",
+        },
+        {
+          id: 2.5,
+          title: "Lesson 5",
+          titleBn: "পাঠ ৫",
+          path: "/tutorial/lesson5",
+        },
+        {
+          id: 2.6,
+          title: "Lesson 6",
+          titleBn: "পাঠ ৬",
+          path: "/tutorial/lesson6",
+        },
+        {
+          id: 2.7,
+          title: "Lesson 7",
+          titleBn: "পাঠ ৭",
+          path: "/tutorial/lesson7",
+        },
+        {
+          id: 2.8,
+          title: "Lesson8",
+          titleBn: "পাঠ ৮",
+          path: "/tutorial/lesson8",
+        },
+        {
+          id: 2.9,
+          title: "Lesson9",
+          titleBn: "পাঠ ৯",
+          path: "/tutorial/lesson9",
+        },
+        {
+          id: 2.1,
+          title: "Lesson10",
+          titleBn: "পাঠ ১০",
+          path: "/tutorial/lesson10",
+        },
+        {
+          id: 2.11,
+          title: "Lesson11",
+          titleBn: "পাঠ ১১",
+          path: "/tutorial/lesson11",
+        },
+        {
+          id: 2.12,
+          title: "Lesson12",
+          titleBn: "পাঠ ১২",
+          path: "/tutorial/lesson12",
         },
       ],
     },
-    { id: 12, title: "All Tage", icon: Tags, path: "/allTag" },
-    // { id: 2, title: "HTML Basics", icon: Code, path: "/basics" },
-    // { id: 3, title: "Text & Headings", icon: Type, path: "/text" },
-    // { id: 4, title: "Links & Media", icon: LinkIcon, path: "/media" },
-    // { id: 5, title: "Lists", icon: List, path: "/lists" },
-    // { id: 6, title: "Forms", icon: FormInput, path: "/forms" },
-    // { id: 7, title: "Tables", icon: Table, path: "/tables" },
-    // { id: 8, title: "Semantic Tags", icon: Layout, path: "/semantic" },
-    // { id: 9, title: "Practice Playground", icon: Terminal, path: "/practice" },
-    // { id: 10, title: "Quizzes", icon: Award, path: "/quiz" },
-    // { id: 11, title: "Resources", icon: Book, path: "/resources" },
+
+    {
+      id: 12,
+      title: "All Tags",
+      titleBn: "সমস্ত ট্যাগ",
+      icon: Tags,
+      path: "/allTag",
+    },
   ];
+
   const language = {
     id: 14,
     title: "Language",
+    titleBn: "ভাষা",
     icon: Globe,
     path: "/resources",
     children: [
@@ -132,7 +233,7 @@ function SideBar({ isHiden = true, setShow }) {
                   <div className="flex items-center gap-3">
                     <Icon className="text-[#0A74FF]" size={20} />
                     <span className="text-gray-700 font-medium">
-                      {item.title}
+                      {lang === "EN" ? item.title : item.titleBn}
                     </span>
                   </div>
 
@@ -163,7 +264,7 @@ function SideBar({ isHiden = true, setShow }) {
                               }`
                             }
                           >
-                            • {d.title}
+                            • {lang === "EN" ? d.title : d.titleBn}
                           </NavLink>
                         </li>
                       ))}
@@ -187,12 +288,14 @@ function SideBar({ isHiden = true, setShow }) {
                 }
               >
                 <Icon className="text-[#0A74FF]" size={20} />
-                <span className="text-gray-700 font-medium">{item?.title}</span>
+                <span className="text-gray-700 font-medium">
+                  {lang === "EN" ? item.title : item.titleBn}
+                </span>
               </NavLink>
             </li>
           );
         })}
-
+        {/* Language change section */}
         <li>
           <button
             onClick={() => toggle(language.id)}
@@ -201,7 +304,7 @@ function SideBar({ isHiden = true, setShow }) {
             <div className="flex items-center gap-3">
               <Globe className="text-[#0A74FF]" size={20} />
               <span className="text-gray-700 font-medium">
-                {language.title}
+                {lang === "EN" ? language.title : language.titleBn}
               </span>
             </div>
 

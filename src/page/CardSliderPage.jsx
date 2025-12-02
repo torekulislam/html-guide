@@ -1,6 +1,6 @@
 import React from "react";
 import CardSlider from "../components/CardSlider";
-import { htmlTagsData } from "../htmlTagsData";
+import { htmlTagsData } from "../data/htmlTagsData";
 import { Link } from "lucide-react";
 function CardSliderPage() {
   const htmlData = htmlTagsData;
