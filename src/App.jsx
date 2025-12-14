@@ -14,20 +14,20 @@ function App() {
         {/* <div className="h-[110vh] w-full bg-[#08224928] backdrop-blur-sm"></div> */}
         <Header />
 
-        <section className="flex gap-4 items-start py-4 p-1 sm:p-4 ">
+        <section className="flex gap-4 items-stretch py-4 p-1 sm:p-4 ">
           <SideBar className="w-64" setShow={() => false} />
           <motion.main
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "backInOut" }}
-            className="flex flex-col gap-4 w-full min-h-[88vh] bg-[#f2f7ff] rounded-2xl p-4  mt-20 mb-4 shadow-lg overflow-auto"
+            className="flex flex-col gap-4 w-full min-h-[calc(100vh-87px)] bg-[#f2f7ff] rounded-2xl p-4  mt-20 mb-4 shadow-lg overflow-y-auto hide-scrollbar-x"
           >
             <Outlet />
           </motion.main>
         </section>
 
         {/* <CodeExample /> */}
-        <footer className="group  mx-4 my-2 bg-white rounded-2xl p-8 shadow-[0px_-4px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_-6px_20px_rgba(10,116,255,0.15)] transition flex flex-col items-center justify-center text-center  hover:-translate-y-1 duration-300">
+        <footer className="group  mx-4  bg-white rounded-2xl p-8 shadow-[0px_-4px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_-6px_20px_rgba(10,116,255,0.15)] transition flex flex-col items-center justify-center text-center  hover:-translate-y-1 duration-300">
           <p>
             © {new Date().getFullYear()}{" "}
             <a href="https://github.com/torekulislam" target="_blank">

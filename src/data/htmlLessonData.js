@@ -491,7 +491,7 @@ export const lessons = [
         titleBn: "পাঠ ১২",
         path: "/tutorial/lesson12",
         prev: { id: 11, path: "/tutorial/lesson11", title: "Lesson11", titleBn: "পাঠ ১১" },
-        next: null,
+        next: { id: 13, path: "/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
 
         quiz: [
             {
@@ -520,6 +520,126 @@ export const lessons = [
             { en: "Build a full webpage using everything learned", bn: "সব শেখা ব্যবহার করে একটি full webpage তৈরি করুন" },
         ],
     },
+
+    // ===== Bonus Lessons 13-15 =====
+    {
+        id: 13,
+        title: "Lesson13",
+        titleBn: "পাঠ ১৩",
+        path: "/tutorial/lesson13",
+        prev: { id: 12, path: "/tutorial/lesson12", title: "Lesson12", titleBn: "পাঠ ১২" },
+        next: { id: 14, path: "/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
+
+        // short quiz (bilingual)
+        quiz: [
+            {
+                id: 1,
+                question: {
+                    en: "Which API stores small amounts of data in the browser?",
+                    bn: "কোন API ব্রাউজারে ছোট পরিমাণ ডেটা সংরক্ষণ করে?"
+                },
+                options: ["localStorage", "sessionStyle", "cookieAPI"],
+                correct: 0
+            },
+            {
+                id: 2,
+                question: {
+                    en: "Which element is used to embed audio?",
+                    bn: "কোন ট্যাগটি অডিও এমবেড করতে ব্যবহার হয়?"
+                },
+                options: ["<audio>", "<sound>", "<media>"],
+                correct: 0
+            },
+            {
+                id: 3,
+                question: {
+                    en: "Which element provides a drawing surface in HTML5?",
+                    bn: "HTML5-এ কোন ট্যাগটি ড্রয়িং সারফেস দেয়?"
+                },
+                options: ["<canvas>", "<svg>", "<draw>"],
+                correct: 0
+            }
+        ],
+
+        assignment: [
+            { en: "Embed an audio file with controls on a page", bn: "একটি পেজে controls সহ অডিও এমবেড করুন" },
+            { en: "Create a small canvas drawing (lines or shapes)", bn: "canvas ব্যবহার করে একটি ছোট ড্রয়িং তৈরি করুন" },
+            { en: "Save a user setting to localStorage and read it on load", bn: "localStorage-এ একটি ইউজার সেটিং সংরক্ষণ করুন এবং লোডে পড়ুন" }
+        ],
+    },
+
+    {
+        id: 14,
+        title: "Lesson14",
+        titleBn: "পাঠ ১৪",
+        path: "/tutorial/lesson14",
+        prev: { id: 13, path: "/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
+        next: { id: 15, path: "/tutorial/lesson15", title: "Lesson15", titleBn: "পাঠ ১৫" },
+
+        quiz: [
+            {
+                id: 1,
+                question: {
+                    en: "What pages typically appear in a developer portfolio?",
+                    bn: "একটি developer portfolio-তে সাধারণত কোন পেজগুলো থাকে?"
+                },
+                options: ["Homepage, Projects, About, Contact", "Only Contact", "Only Blog"],
+                correct: 0
+            },
+            {
+                id: 2,
+                question: {
+                    en: "Which content is important for project showcase?",
+                    bn: "প্রজেক্ট প্রদর্শনের জন্য কোন বিষয়গুলো গুরুত্বপূর্ণ?"
+                },
+                options: ["Screenshots, short description, links", "Only code", "Only images"],
+                correct: 0
+            },
+        ],
+
+        assignment: [
+            { en: "Create a small portfolio with Home, Projects and Contact", bn: "Home, Projects ও Contactসহ একটি পোর্টফোলিও তৈরি করুন" },
+            { en: "Add 2 project cards with links and short descriptions", bn: "২টি প্রজেক্ট কার্ড যোগ করুন — লিংক ও সংক্ষিপ্ত বর্ণনা সহ" },
+            { en: "Make the portfolio mobile-friendly", bn: "পোর্টফোলিওকে মোবাইল-ফ্রেন্ডলি করুন" }
+        ],
+    },
+
+    {
+        id: 15,
+        title: "Lesson15",
+        titleBn: "পাঠ ১৫",
+        path: "/tutorial/lesson15",
+        prev: { id: 14, path: "/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
+        next: null,
+
+        quiz: [
+            {
+                id: 1,
+                question: {
+                    en: "Which mini-project is good for practicing forms and layout?",
+                    bn: "Forms ও layout অনুশীলনের জন্য কোন মিনি-প্রজেক্ট ভালো?"
+                },
+                options: ["Login page", "Only blog", "Only gallery"],
+                correct: 0
+            },
+            {
+                id: 2,
+                question: {
+                    en: "What does a product card usually include?",
+                    bn: "একটি product card সাধারণত কী থাকে?"
+                },
+                options: ["Image, title, price, CTA", "Only text", "Only image"],
+                correct: 0
+            }
+        ],
+
+        assignment: [
+            { en: "Build one mini-project: choose from Login, Resume, Product card, Landing page", bn: "একটি মিনি-প্রজেক্ট তৈরি করুন — Login, Resume, Product card বা Landing page থেকে বেছে নিন" },
+            { en: "Make it responsive and use semantic HTML", bn: "রেস্পনসিভ করুন এবং সেম্যান্টিক HTML ব্যবহার করুন" },
+            { en: "Deploy the mini-project (GitHub Pages or similar) and share a link", bn: "প্রজেক্টটি ডেপ্লয় করুন (GitHub Pages ইত্যাদি) এবং লিংক শেয়ার করুন" }
+        ],
+    },
+
 
 
 

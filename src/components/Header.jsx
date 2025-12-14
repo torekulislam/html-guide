@@ -33,7 +33,7 @@ function Header() {
         <div
           onClick={() => setShowSideBar(false)}
           className=" absolute backdrop-blur-md
-        w-full h-[103vh] z-20 md:hidden  "
+        w-full h-[103vh] z-20 md:hidden"
         ></div>
       )}
 
