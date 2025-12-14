@@ -214,7 +214,7 @@ function SideBar({ isHiden = true, setShow }) {
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`flex-col bg-[#f7faff] w-[90%] md:w-[40%] max-w-[300px] rounded-2xl gap-4 p-4 mt-20 mb-4  overflow-y-scroll md:overflow-auto .hide-scrollbar-x md:h-[100%] h-[calc(100vh-110px)] shadow-[0_4px_12px_rgba(0,0,0,0.05)] ${
+      className={`flex-col bg-[#f7faff] w-[90%] md:w-[40%] max-w-[300px] rounded-2xl gap-4 p-4 mt-20 mb-4  overflow-y-scroll md:overflow-hidden .hide-scrollbar-x  h-[calc(100vh-110px)] md:h-full md:min-h-[calc(100vh-50px)] shadow-[0_4px_12px_rgba(0,0,0,0.05)] ${
         isHiden ? "hidden md:flex" : "flex md:hidden"
       } absolute top-7 shadow-[1px_1px_15px_#ddd] left-4 z-30 md:sticky `}
     >
