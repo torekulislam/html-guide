@@ -10,7 +10,7 @@ import {
   Globe,
   Layout,
   Terminal,
-  Award,
+  BookText,
   Book,
   Tags,
   ChevronDown,
@@ -82,7 +82,7 @@ function SideBar({ isHiden = true, setShow }) {
       id: 2,
       title: "Tutorial",
       titleBn: "টিউটোরিয়াল",
-      icon: BookOpen,
+      icon: BookText,
 
       children: [
         {
@@ -166,6 +166,13 @@ function SideBar({ isHiden = true, setShow }) {
       titleBn: "সমস্ত ট্যাগ",
       icon: Tags,
       path: "/allTag",
+    },
+    {
+      id: 13,
+      title: "Code Editor",
+      titleBn: "কোড এডিটর",
+      icon: Code,
+      path: "/html/codeditor",
     },
   ];
 

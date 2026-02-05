@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Dosis:wght@200..800&family=Yatra+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 
-p,
+/* p,
 div {
   font-family: "Dosis", sans-serif;
-}
+} */
+
+
 
 h3,
 h4 {

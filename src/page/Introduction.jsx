@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Globe, Code, BookOpen, Layout, Chrome } from "lucide-react";
 import CodeExample from "../components/CodeExample";
+
 import Card from "../components/Card";
 // const CodeExample = ({ code }) => (
 //   <div className="bg-gray-900 rounded-xl p-4 overflow-x-auto">

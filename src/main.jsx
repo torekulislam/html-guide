@@ -7,7 +7,13 @@ import { store } from "./store/store.js";
 
 import { Provider } from "react-redux";
 
-import { Introduction, CardSliderPage, TagDitilePage, ErrorPage } from "./page";
+import {
+  Introduction,
+  CardSliderPage,
+  TagDitilePage,
+  ErrorPage,
+  HtmlCodeEditorPage,
+} from "./page";
 import LessonPage from "./page/LessonPage.jsx";
 
 let router = createBrowserRouter([
@@ -34,6 +40,10 @@ let router = createBrowserRouter([
       {
         path: "/tutorial/:lessonid",
         element: <LessonPage />,
+      },
+      {
+        path: "/html/codeditor",
+        element: <HtmlCodeEditorPage />,
       },
     ],
   },

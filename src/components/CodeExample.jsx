@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { Copy, CopyCheck } from "lucide-react";
+import { Copy, CopyCheck, Radio } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { changeHtmlCode } from "../store/htmlSlice";
+import { Link } from "react-router-dom";
+
 export default function CodeExample({ code }) {
   const [copied, setCopied] = useState(false);
-
+  const dispatch = useDispatch();
+  function handelClick() {
+    dispatch(changeHtmlCode(code));
+  }
   // Escape HTML for display
   const escaped = code
     .replace(/&/g, "&amp;")
@@ -32,30 +39,41 @@ export default function CodeExample({ code }) {
   };
 
   return (
-    <div className="bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-hidden max-h-[400px] my-4">
-      {/* Copy button - to copy code*/}
-      <div className="flex justify-end items-center px-4 py-2 bg-[#262626] border-b border-[#333]">
-        <button
-          onClick={handleCopy}
-          className="text-gray-300 text-[14px] px-3 py-1 rounded hover:text-gray-200 transition"
-        >
-          {copied ? (
-            <div className="flex items-center gap-1">
-              <CopyCheck className="h-4" /> Copied!
-            </div>
-          ) : (
-            <div className="flex items-center gap-1">
-              <Copy className="h-4" /> Copy Code
-            </div>
-          )}
-        </button>
-      </div>
+    <>
+      <div className="bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-hidden max-h-[400px] my-4">
+        {/* Copy button - to copy code*/}
+        <div className="flex justify-between items-center px-4 py-2 bg-[#262626] border-b border-[#333]">
+          <button
+            onClick={handleCopy}
+            className="text-gray-300 text-[14px] px-3 py-1  rounded hover:text-gray-200 transition"
+          >
+            {copied ? (
+              <div className="flex items-center gap-1">
+                <CopyCheck className="h-4" /> Copied!
+              </div>
+            ) : (
+              <div className="flex items-center gap-1">
+                <Copy className="h-4" /> Copy Code
+              </div>
+            )}
+          </button>
+        </div>
 
-      <pre
-        className="whitespace-pre-wrap bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-x-auto overflow-y-auto max-h-[400px] p-4  pb-15"
-        dangerouslySetInnerHTML={{ __html: highlighted }}
-      />
-    </div>
+        <pre
+          className="whitespace-pre-wrap bg-[#1E1E1E] text-gray-200 font-mono text-sm rounded-xl overflow-x-auto overflow-y-auto max-h-[400px] p-4  pb-15"
+          dangerouslySetInnerHTML={{ __html: highlighted }}
+        />
+      </div>
+      <Link
+        to="/html/codeditor"
+        onClick={handelClick}
+        className=" flex gap-1 bg-blue-600 text-amber-50 w-fit items-center px-4 p-2 rounded-md "
+      >
+        {" "}
+        <Radio />
+        Try it Yourself &gt;&gt;
+      </Link>
+    </>
   );
 }
 

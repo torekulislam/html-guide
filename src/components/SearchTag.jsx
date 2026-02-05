@@ -5,6 +5,49 @@ import { htmlTagsDataDitiles } from "../data/htmlTagsData";
 import { Link } from "react-router-dom";
 
 function SearchTag({ show, setShow }) {
+  const itemRefs = React.useRef([]);
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  useEffect(() => {
+    const el = itemRefs.current[selectedIndex];
+    if (el) {
+      el.scrollIntoView({
+        block: "nearest",
+        behavior: "smooth",
+      });
+    }
+  }, [selectedIndex]);
+
+  /* Reset selection when search changes */
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [searchQuery]);
+
+  const handleKeyDown = (e) => {
+    if (!elements.length) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev === elements.length - 1 ? 0 : prev + 1));
+    }
+
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev === 0 ? elements.length - 1 : prev - 1));
+    }
+
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const selected = elements[selectedIndex];
+      if (selected) {
+        setShow(false);
+        window.location.href = `/allTag/${selected.name}`;
+      }
+    }
+    if (e.key === "Escape") setShow(false);
+  };
+
   useEffect(() => {
     document.body.style.overflow = show ? "hidden" : "auto";
 
@@ -12,8 +55,6 @@ function SearchTag({ show, setShow }) {
       document.body.style.overflow = "auto"; // cleanup
     };
   }, [show]);
-
-  const [searchQuery, setSearchQuery] = useState("");
 
   const elements = htmlTagsDataDitiles.filter((item) =>
     item?.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
@@ -45,6 +86,7 @@ function SearchTag({ show, setShow }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               type="text"
+              onKeyDown={handleKeyDown}
               placeholder="Search tag..."
               className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base"
             />
@@ -65,9 +107,8 @@ function SearchTag({ show, setShow }) {
               </div>
             ) : elements.length > 0 ? (
               <div className="space-y-2">
-                {elements.map((item, index) => (
+                {/* {elements.map((item, index) => (
                   <Link
-                    autoFocus
                     key={index}
                     to={`/allTag/${item?.name}`}
                     onClick={() => setShow(false)}
@@ -81,7 +122,55 @@ function SearchTag({ show, setShow }) {
                     </div>
                     <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-gray-200" />
                   </Link>
-                ))}
+                ))} */}
+                {elements.map((item, index) => {
+                  const isActive = index === selectedIndex;
+
+                  return (
+                    <Link
+                      key={index}
+                      ref={(el) => (itemRefs.current[index] = el)}
+                      to={`/allTag/${item?.name}`}
+                      onClick={() => setShow(false)}
+                      onMouseEnter={() => setSelectedIndex(index)}
+                      className={`
+        p-3 rounded-lg cursor-pointer transition
+        flex items-center gap-4
+        ${isActive ? "bg-sky-500" : "hover:bg-sky-500"}
+      `}
+                    >
+                      <div
+                        className={`
+          border p-1 rounded
+          ${isActive ? "border-sky-300" : "border-[#d4cfcf93]"}
+        `}
+                      >
+                        <Hash
+                          className={`
+            h-5 w-5 stroke-1
+            ${isActive ? "text-white" : "text-gray-500"}
+          `}
+                        />
+                      </div>
+
+                      <div
+                        className={`
+          flex-1 font-semibold
+          ${isActive ? "text-white" : "text-gray-400"}
+        `}
+                      >
+                        {item?.name}
+                      </div>
+
+                      <ChevronRight
+                        className={`
+          w-4 h-4
+          ${isActive ? "text-white" : "text-gray-400"}
+        `}
+                      />
+                    </Link>
+                  );
+                })}
               </div>
             ) : (
               <div className="text-gray-400 text-center py-12">

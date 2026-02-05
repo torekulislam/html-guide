@@ -20,6 +20,7 @@ function Header() {
       initial={{ opacity: 0, y: -30 }} // start hidden, left
       animate={{ opacity: 1, y: -10 }} // animate to visible
       transition={{ duration: 0.7, ease: "easeOut" }}
+      className=" fixed w-full z-40"
     >
       {/* Searceh Tabe section */}
       {showSearchManue && (
