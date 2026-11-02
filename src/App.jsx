@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-[#eaf0f5] w-full relative ">
-        {/* <div className="h-[110vh] w-full bg-[#08224928] backdrop-blur-sm"></div> */}
         <Header />
 
+        <div className="h-1 w-full"></div>
         <section className="flex gap-4 items-stretch py-4 p-1 sm:p-4 ">
           <SideBar className="w-64" setShow={() => false} />
           <motion.main

@@ -57,7 +57,7 @@ function SearchTag({ show, setShow }) {
   }, [show]);
 
   const elements = htmlTagsDataDitiles.filter((item) =>
-    item?.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
+    item?.name.toLowerCase().includes(searchQuery.trim().toLowerCase()),
   );
 
   if (!show) return null; //  hide completely when closed
@@ -67,7 +67,7 @@ function SearchTag({ show, setShow }) {
       {/* Backdrop */}
       <div
         onClick={() => setShow(false)}
-        className="h-[110vh] w-full bg-[#062a5f38] backdrop-blur-sm"
+        className="h-[110vh] w-full bg-[#062a5f38] backdrop-blur-[3px]"
       ></div>
 
       {/* Modal */}
