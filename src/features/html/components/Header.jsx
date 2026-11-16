@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Search, CodeXml, Globe } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SearchTag from "./SearchTag";
 import SideBar from "./SideBar";
@@ -16,7 +16,7 @@ function Header() {
     };
   }, [showSearchManue, showSideBar]);
   return (
-    <motion.header
+    <Motion.header
       initial={{ opacity: 0, y: -30 }} // start hidden, left
       animate={{ opacity: 1, y: -10 }} // animate to visible
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -74,7 +74,7 @@ function Header() {
           </button>
         </div>
       </div>
-    </motion.header>
+    </Motion.header>
   );
 }
 

@@ -19,7 +19,7 @@ import {
   Link as LinkIcon,
   X,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "../store/htmlSlice";
@@ -225,7 +225,7 @@ function SideBar({ isHiden = true, setShow }) {
   }, [location]);
 
   return (
-    <motion.aside
+    <Motion.aside
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -261,7 +261,7 @@ function SideBar({ isHiden = true, setShow }) {
 
                 <AnimatePresence initial={false}>
                   {openId === item.id && (
-                    <motion.ul
+                    <Motion.ul
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -283,7 +283,7 @@ function SideBar({ isHiden = true, setShow }) {
                           </NavLink>
                         </li>
                       ))}
-                    </motion.ul>
+                    </Motion.ul>
                   )}
                 </AnimatePresence>
               </li>
@@ -333,7 +333,7 @@ function SideBar({ isHiden = true, setShow }) {
 
           <AnimatePresence initial={false}>
             {openId === language.id && (
-              <motion.ul
+              <Motion.ul
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -352,12 +352,12 @@ function SideBar({ isHiden = true, setShow }) {
                     </div>
                   </li>
                 ))}
-              </motion.ul>
+              </Motion.ul>
             )}
           </AnimatePresence>
         </li>
       </ul>
-    </motion.aside>
+    </Motion.aside>
   );
 }
 

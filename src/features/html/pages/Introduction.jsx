@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Globe, Code, BookOpen, Layout, Chrome } from "lucide-react";
 import CodeExample from "../components/CodeExample";
 

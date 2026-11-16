@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ArrowLeft, Clock, Code2 } from "lucide-react";
@@ -16,7 +16,7 @@ function ComingSoonPage({
 
   return (
     <div className="max-w-4xl mx-auto sm:px-8 py-10">
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -54,7 +54,7 @@ function ComingSoonPage({
           <ArrowLeft className="w-4 h-4" />
           {isBangla ? "HTML গাইডে যান" : "Go to HTML Guide"}
         </Link>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }

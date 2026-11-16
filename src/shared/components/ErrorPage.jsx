@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 export default function ErrorPage() {
   return (
     // this page going to be apaiear if anye page not found
     <div className=" overflow-hidden">
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -25,7 +25,7 @@ export default function ErrorPage() {
         >
           Go Back Home
         </Link>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import scrollbarHide from 'tailwind-scrollbar-hide'
+
 export default {
     content: [
         "./src/**/*.{js,ts,jsx,tsx}", // adjust path to your project structure
@@ -22,7 +24,5 @@ export default {
             },
         },
     },
-    plugins: [
-        require('tailwind-scrollbar-hide'),
-    ],
+    plugins: [scrollbarHide],
 };

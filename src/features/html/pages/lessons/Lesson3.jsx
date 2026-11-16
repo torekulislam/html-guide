@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image, List, BookOpen, Clipboard } from "lucide-react";
 import { useSelector } from "react-redux";
 

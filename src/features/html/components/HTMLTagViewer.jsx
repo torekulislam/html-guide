@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Globe, Code2, Info, Zap, Settings } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 import CodeExample from "./CodeExample";
@@ -39,7 +39,7 @@ export default function HTMLTagViewer({ tagData }) {
         </Card>
 
         {/* Tab Navigation */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -89,10 +89,10 @@ export default function HTMLTagViewer({ tagData }) {
             <Settings className="w-4 h-4" />
             {isBangla ? "অ্যাট্রিবিউটস" : "Attributes"}
           </button>
-        </motion.div>
+        </Motion.div>
 
         {/* Content Area */}
-        <motion.div
+        <Motion.div
           key={activeTab}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function HTMLTagViewer({ tagData }) {
               </div>
             </div>
           )}
-        </motion.div>
+        </Motion.div>
       </div>
     </>
   );

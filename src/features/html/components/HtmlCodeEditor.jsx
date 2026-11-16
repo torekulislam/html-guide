@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Editor from "@monaco-editor/react";
 import { Copy, Download, Sun, Moon, CopyCheck } from "lucide-react";
-import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
+import { motion as Motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 function HtmlCodeEditor() {
-  const dispatch = useDispatch();
-
   const initialHtml = useSelector((state) => state.htmlStore.htmlCode);
 
   const [code, setCode] = useState(initialHtml);
@@ -41,7 +39,7 @@ function HtmlCodeEditor() {
   };
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "anticipate" }}
@@ -62,26 +60,26 @@ function HtmlCodeEditor() {
         >
           {theme === "vs-dark" ? (
             <>
-              <motion.div
+              <Motion.div
                 key={"SUN"}
                 initial={{ rotate: "0deg" }}
                 animate={{ rotate: "360deg" }}
                 transition={{ duration: 1 }}
               >
                 <Sun className="h-4.5 text-sky-400" />
-              </motion.div>
+              </Motion.div>
               <span className=" hidden md:block">Light Mode</span>
             </>
           ) : (
             <>
-              <motion.div
+              <Motion.div
                 key={"moon"}
                 initial={{ rotate: "0deg" }}
                 animate={{ rotate: "-360deg" }}
                 transition={{ duration: 1 }}
               >
                 <Moon className="h-4.5 text-sky-400" />
-              </motion.div>
+              </Motion.div>
               <span className=" hidden md:block">Dark Mode</span>
             </>
           )}
@@ -139,7 +137,7 @@ function HtmlCodeEditor() {
           />
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 }
 

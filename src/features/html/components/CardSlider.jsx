@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import TagCard from "./TagCard";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 export default function CardSlider({ data }) {
   const scrollRef = useRef(null);
@@ -24,7 +24,7 @@ export default function CardSlider({ data }) {
   };
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export default function CardSlider({ data }) {
         </div>
 
         {/* Slider */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -70,8 +70,8 @@ export default function CardSlider({ data }) {
               <TagCard item={item} />
             </Link>
           ))}
-        </motion.div>
+        </Motion.div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 }

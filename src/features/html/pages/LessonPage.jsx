@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
+import ErrorPage from "../../../shared/components/ErrorPage";
 import {
-  ErrorPage,
   Lesson1,
   Lesson2,
   Lesson3,
@@ -13,7 +13,7 @@ import {
   Lesson10,
   Lesson11,
   Lesson12,
-} from "./index";
+} from "./lessons";
 
 const lessonsMap = {
   Lesson1,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Globe, Code2, Info, Zap, Settings, icons } from "lucide-react";
-function ComonButton({ bn, en, Icon, isBengali, activeTab, setActiveTab }) {
+function ComonButton({ bn, en, isBengali, activeTab, setActiveTab }) {
   const isActive = activeTab === en;
   console.log(en, bn, icons, activeTab);
 

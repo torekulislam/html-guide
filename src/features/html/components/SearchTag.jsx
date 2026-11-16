@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { X, Search, Hash, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { htmlTagsDataDitiles } from "../data/htmlTagsData";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -72,7 +72,7 @@ function SearchTag({ show, setShow }) {
       ></div>
 
       {/* Modal */}
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: -400, scale: 0 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -180,7 +180,7 @@ function SearchTag({ show, setShow }) {
             )}
           </div>
         </div>
-      </motion.div>
+      </Motion.div>
     </div>
   );
 }
