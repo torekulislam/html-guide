@@ -74,7 +74,7 @@ function HomePage() {
   };
 
   return (
-    <div className="bg-[#FBFAF6] text-[#19372D]">
+    <div lang={isBangla ? "bn" : "en"} className="home-shell bg-[#FBFAF6] text-[#19372D]">
       <header className="border-b border-[#EAE8DF]">
         <nav
           aria-label={isBangla ? "প্রধান নেভিগেশন" : "Main navigation"}
