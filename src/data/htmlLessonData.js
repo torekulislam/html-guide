@@ -3,9 +3,9 @@ export const lessons = [
         id: 1,
         title: "Lesson 1",
         titleBn: "পাঠ ১",
-        path: "/tutorial/lesson1",
+        path: "/html/tutorial/lesson1",
         prev: null,
-        next: { id: 2, path: "/tutorial/lesson2", title: "Lesson2", titleBn: "পাঠ ২" },
+        next: { id: 2, path: "/html/tutorial/lesson2", title: "Lesson2", titleBn: "পাঠ ২" },
 
         quiz: [
             {
@@ -38,9 +38,9 @@ export const lessons = [
         id: 2,
         title: "Lesson 2",
         titleBn: "পাঠ ২",
-        path: "/tutorial/lesson2",
-        prev: { id: 1, path: "/tutorial/lesson1", title: "Lesson1", titleBn: "পাঠ ১" },
-        next: { id: 3, path: "/tutorial/lesson3", title: "Lesson3", titleBn: "পাঠ ৩" },
+        path: "/html/tutorial/lesson2",
+        prev: { id: 1, path: "/html/tutorial/lesson1", title: "Lesson1", titleBn: "পাঠ ১" },
+        next: { id: 3, path: "/html/tutorial/lesson3", title: "Lesson3", titleBn: "পাঠ ৩" },
 
         quiz: [
             {
@@ -73,9 +73,9 @@ export const lessons = [
         id: 3,
         title: "Lesson 3",
         titleBn: "পাঠ ৩",
-        path: "/tutorial/lesson3",
-        prev: { id: 2, path: "/tutorial/lesson2", title: "Lesson2", titleBn: "পাঠ ২" },
-        next: { id: 4, path: "/tutorial/lesson4", title: "Lesson4", titleBn: "পাঠ ৪" },
+        path: "/html/tutorial/lesson3",
+        prev: { id: 2, path: "/html/tutorial/lesson2", title: "Lesson2", titleBn: "পাঠ ২" },
+        next: { id: 4, path: "/html/tutorial/lesson4", title: "Lesson4", titleBn: "পাঠ ৪" },
 
         quiz: [
             {
@@ -107,9 +107,9 @@ export const lessons = [
         id: 4,
         title: "Lesson 4",
         titleBn: "পাঠ ৪",
-        path: "/tutorial/lesson4",
-        prev: { id: 3, path: "/tutorial/lesson3", title: "Lesson3", titleBn: "পাঠ ৩" },
-        next: { id: 5, path: "/tutorial/lesson5", title: "Lesson 5", titleBn: "পাঠ ৫" },
+        path: "/html/tutorial/lesson4",
+        prev: { id: 3, path: "/html/tutorial/lesson3", title: "Lesson3", titleBn: "পাঠ ৩" },
+        next: { id: 5, path: "/html/tutorial/lesson5", title: "Lesson 5", titleBn: "পাঠ ৫" },
 
         quiz: [
             {
@@ -141,9 +141,9 @@ export const lessons = [
         id: 5,
         title: "Lesson 5",
         titleBn: "পাঠ ৫",
-        path: "/tutorial/lesson5",
-        prev: { id: 4, path: "/tutorial/lesson4", title: "Lesson 4", titleBn: "পাঠ ৪" },
-        next: { id: 6, path: "/tutorial/lesson6", title: "Lesson 6", titleBn: "পাঠ ৬" },
+        path: "/html/tutorial/lesson5",
+        prev: { id: 4, path: "/html/tutorial/lesson4", title: "Lesson 4", titleBn: "পাঠ ৪" },
+        next: { id: 6, path: "/html/tutorial/lesson6", title: "Lesson 6", titleBn: "পাঠ ৬" },
 
         quiz: [
             {
@@ -208,9 +208,9 @@ export const lessons = [
         id: 6,
         title: "Lesson6",
         titleBn: "পাঠ ৬",
-        path: "/tutorial/lesson6",
-        prev: { id: 5, path: "/tutorial/lesson5", title: "Lesson5", titleBn: "পাঠ ৫" },
-        next: { id: 7, path: "/tutorial/lesson7", title: "Lesson7", titleBn: "পাঠ ৭" },
+        path: "/html/tutorial/lesson6",
+        prev: { id: 5, path: "/html/tutorial/lesson5", title: "Lesson5", titleBn: "পাঠ ৫" },
+        next: { id: 7, path: "/html/tutorial/lesson7", title: "Lesson7", titleBn: "পাঠ ৭" },
         quiz: [
             {
                 id: 1,
@@ -274,9 +274,9 @@ export const lessons = [
         id: 7,
         title: "Lesson7",
         titleBn: "পাঠ ৭",
-        path: "/tutorial/lesson7",
-        prev: { id: 6, path: "/tutorial/lesson6", title: "Lesson6", titleBn: "পাঠ ৬" },
-        next: { id: 8, path: "/tutorial/lesson8", title: "Lesson8", titleBn: "পাঠ ৮" },
+        path: "/html/tutorial/lesson7",
+        prev: { id: 6, path: "/html/tutorial/lesson6", title: "Lesson6", titleBn: "পাঠ ৬" },
+        next: { id: 8, path: "/html/tutorial/lesson8", title: "Lesson8", titleBn: "পাঠ ৮" },
 
         quiz: [
             {
@@ -341,9 +341,9 @@ export const lessons = [
         id: 8,
         title: "Lesson8",
         titleBn: "পাঠ ৮",
-        path: "/tutorial/lesson8",
-        prev: { id: 7, path: "/tutorial/lesson7", title: "Lesson7", titleBn: "পাঠ ৭" },
-        next: { id: 9, path: "/tutorial/lesson9", title: "Lesson9", titleBn: "পাঠ ৯" },
+        path: "/html/tutorial/lesson8",
+        prev: { id: 7, path: "/html/tutorial/lesson7", title: "Lesson7", titleBn: "পাঠ ৭" },
+        next: { id: 9, path: "/html/tutorial/lesson9", title: "Lesson9", titleBn: "পাঠ ৯" },
 
         quiz: [
             {
@@ -378,9 +378,9 @@ export const lessons = [
         id: 9,
         title: "Lesson9",
         titleBn: "পাঠ ৯",
-        path: "/tutorial/lesson9",
-        prev: { id: 8, path: "/tutorial/lesson8", title: "Lesson8", titleBn: "পাঠ ৮" },
-        next: { id: 10, path: "/tutorial/lesson10", title: "Lesson10", titleBn: "পাঠ ১০" },
+        path: "/html/tutorial/lesson9",
+        prev: { id: 8, path: "/html/tutorial/lesson8", title: "Lesson8", titleBn: "পাঠ ৮" },
+        next: { id: 10, path: "/html/tutorial/lesson10", title: "Lesson10", titleBn: "পাঠ ১০" },
 
         quiz: [
             {
@@ -415,9 +415,9 @@ export const lessons = [
         id: 10,
         title: "Lesson10",
         titleBn: "পাঠ ১০",
-        path: "/tutorial/lesson10",
-        prev: { id: 9, path: "/tutorial/lesson9", title: "Lesson9", titleBn: "পাঠ ৯" },
-        next: { id: 11, path: "/tutorial/lesson11", title: "Lesson11", titleBn: "পাঠ ১১" },
+        path: "/html/tutorial/lesson10",
+        prev: { id: 9, path: "/html/tutorial/lesson9", title: "Lesson9", titleBn: "পাঠ ৯" },
+        next: { id: 11, path: "/html/tutorial/lesson11", title: "Lesson11", titleBn: "পাঠ ১১" },
 
         quiz: [
             {
@@ -452,9 +452,9 @@ export const lessons = [
         id: 11,
         title: "Lesson11",
         titleBn: "পাঠ ১১",
-        path: "/tutorial/lesson11",
-        prev: { id: 10, path: "/tutorial/lesson10", title: "Lesson10", titleBn: "পাঠ ১০" },
-        next: { id: 12, path: "/tutorial/lesson12", title: "Lesson12", titleBn: "পাঠ ১২" },
+        path: "/html/tutorial/lesson11",
+        prev: { id: 10, path: "/html/tutorial/lesson10", title: "Lesson10", titleBn: "পাঠ ১০" },
+        next: { id: 12, path: "/html/tutorial/lesson12", title: "Lesson12", titleBn: "পাঠ ১২" },
 
         quiz: [
             {
@@ -489,9 +489,9 @@ export const lessons = [
         id: 12,
         title: "Lesson12",
         titleBn: "পাঠ ১২",
-        path: "/tutorial/lesson12",
-        prev: { id: 11, path: "/tutorial/lesson11", title: "Lesson11", titleBn: "পাঠ ১১" },
-        next: { id: 13, path: "/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
+        path: "/html/tutorial/lesson12",
+        prev: { id: 11, path: "/html/tutorial/lesson11", title: "Lesson11", titleBn: "পাঠ ১১" },
+        next: { id: 13, path: "/html/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
 
         quiz: [
             {
@@ -526,9 +526,9 @@ export const lessons = [
         id: 13,
         title: "Lesson13",
         titleBn: "পাঠ ১৩",
-        path: "/tutorial/lesson13",
-        prev: { id: 12, path: "/tutorial/lesson12", title: "Lesson12", titleBn: "পাঠ ১২" },
-        next: { id: 14, path: "/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
+        path: "/html/tutorial/lesson13",
+        prev: { id: 12, path: "/html/tutorial/lesson12", title: "Lesson12", titleBn: "পাঠ ১২" },
+        next: { id: 14, path: "/html/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
 
         // short quiz (bilingual)
         quiz: [
@@ -572,9 +572,9 @@ export const lessons = [
         id: 14,
         title: "Lesson14",
         titleBn: "পাঠ ১৪",
-        path: "/tutorial/lesson14",
-        prev: { id: 13, path: "/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
-        next: { id: 15, path: "/tutorial/lesson15", title: "Lesson15", titleBn: "পাঠ ১৫" },
+        path: "/html/tutorial/lesson14",
+        prev: { id: 13, path: "/html/tutorial/lesson13", title: "Lesson13", titleBn: "পাঠ ১৩" },
+        next: { id: 15, path: "/html/tutorial/lesson15", title: "Lesson15", titleBn: "পাঠ ১৫" },
 
         quiz: [
             {
@@ -608,8 +608,8 @@ export const lessons = [
         id: 15,
         title: "Lesson15",
         titleBn: "পাঠ ১৫",
-        path: "/tutorial/lesson15",
-        prev: { id: 14, path: "/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
+        path: "/html/tutorial/lesson15",
+        prev: { id: 14, path: "/html/tutorial/lesson14", title: "Lesson14", titleBn: "পাঠ ১৪" },
         next: null,
 
         quiz: [

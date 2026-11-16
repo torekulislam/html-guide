@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { X, Search, Hash, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { htmlTagsDataDitiles } from "../data/htmlTagsData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SearchTag({ show, setShow }) {
   const itemRefs = React.useRef([]);
+  const navigate = useNavigate();
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
@@ -42,7 +43,7 @@ function SearchTag({ show, setShow }) {
       const selected = elements[selectedIndex];
       if (selected) {
         setShow(false);
-        window.location.href = `/allTag/${selected.name}`;
+        navigate(`/html/allTag/${selected.name}`);
       }
     }
     if (e.key === "Escape") setShow(false);
@@ -110,7 +111,7 @@ function SearchTag({ show, setShow }) {
                 {/* {elements.map((item, index) => (
                   <Link
                     key={index}
-                    to={`/allTag/${item?.name}`}
+                    to={`/html/allTag/${item?.name}`}
                     onClick={() => setShow(false)}
                     className="group p-3 hover:bg-sky-500 rounded-lg cursor-pointer transition flex items-center gap-4"
                   >
@@ -130,7 +131,7 @@ function SearchTag({ show, setShow }) {
                     <Link
                       key={index}
                       ref={(el) => (itemRefs.current[index] = el)}
-                      to={`/allTag/${item?.name}`}
+                      to={`/html/allTag/${item?.name}`}
                       onClick={() => setShow(false)}
                       onMouseEnter={() => setSelectedIndex(index)}
                       className={`

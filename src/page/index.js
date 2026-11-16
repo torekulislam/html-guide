@@ -1,7 +1,9 @@
 import Introduction from "./Introduction";
+import HomePage from "./HomePage";
 import CardSliderPage from "./CardSliderPage";
 import TagDitilePage from "./TagDitilePage";
 import HtmlCodeEditorPage from "./htmlCodeEditorPage";
+import ComingSoonPage from "./ComingSoonPage";
 import Lesson1 from "./Lessons/Lesson1";
 import Lesson2 from "./Lessons/Lesson2";
 import Lesson3 from "./Lessons/Lesson3";
@@ -15,5 +17,7 @@ import Lesson10 from "./Lessons/Lesson10";
 import Lesson11 from "./Lessons/Lesson11";
 import Lesson12 from "./Lessons/Lesson12";
 import ErrorPage from "../components/ErrorPage"
-
-export { Introduction, CardSliderPage, TagDitilePage, HtmlCodeEditorPage, Lesson1, Lesson2, Lesson3, Lesson4, Lesson5, Lesson6, Lesson7, Lesson8, Lesson9, Lesson10, Lesson11, Lesson12, ErrorPage };
+import { HtmlPage } from "./HtmlPage";
+export {
+    HtmlPage, HomePage, Introduction, CardSliderPage, TagDitilePage, HtmlCodeEditorPage, ComingSoonPage, Lesson1, Lesson2, Lesson3, Lesson4, Lesson5, Lesson6, Lesson7, Lesson8, Lesson9, Lesson10, Lesson11, Lesson12, ErrorPage
+};

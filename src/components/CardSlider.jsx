@@ -63,7 +63,7 @@ export default function CardSlider({ data }) {
           {data?.tags?.map((item, i) => (
             <Link
               key={i}
-              to={`/allTag/${item?.name}`}
+              to={`/html/allTag/${item?.name}`}
               className="flex gap-4 sm:gap-6 min-w-[250px] w-[75%] sm:w-[45%] md:w-[30%] lg:w-[22%]
              hover:scale-[1.03] transition-transform duration-200"
             >

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {
   BookOpen,
   Code,
+  Home,
   Type,
   List,
   FormInput,
@@ -71,11 +72,18 @@ function SideBar({ isHiden = true, setShow }) {
   // ];
   const sidebarItems = [
     {
+      id: 0,
+      title: "Home",
+      titleBn: "হোম",
+      icon: Home,
+      path: "/",
+    },
+    {
       id: 1,
       title: "Introduction",
       titleBn: "ভূমিকা",
       icon: BookOpen,
-      path: "/",
+      path: "/html",
     },
 
     {
@@ -89,73 +97,73 @@ function SideBar({ isHiden = true, setShow }) {
           id: 2.1,
           title: "Lesson 1",
           titleBn: "পাঠ ১",
-          path: "/tutorial/lesson1",
+          path: "/html/tutorial/lesson1",
         },
         {
           id: 2.2,
           title: "Lesson 2",
           titleBn: "পাঠ ২",
-          path: "/tutorial/lesson2",
+          path: "/html/tutorial/lesson2",
         },
         {
           id: 2.3,
           title: "Lesson 3",
           titleBn: "পাঠ ৩",
-          path: "/tutorial/lesson3",
+          path: "/html/tutorial/lesson3",
         },
         {
           id: 2.4,
           title: "Lesson 4",
           titleBn: "পাঠ ৪",
-          path: "/tutorial/lesson4",
+          path: "/html/tutorial/lesson4",
         },
         {
           id: 2.5,
           title: "Lesson 5",
           titleBn: "পাঠ ৫",
-          path: "/tutorial/lesson5",
+          path: "/html/tutorial/lesson5",
         },
         {
           id: 2.6,
           title: "Lesson 6",
           titleBn: "পাঠ ৬",
-          path: "/tutorial/lesson6",
+          path: "/html/tutorial/lesson6",
         },
         {
           id: 2.7,
           title: "Lesson 7",
           titleBn: "পাঠ ৭",
-          path: "/tutorial/lesson7",
+          path: "/html/tutorial/lesson7",
         },
         {
           id: 2.8,
           title: "Lesson8",
           titleBn: "পাঠ ৮",
-          path: "/tutorial/lesson8",
+          path: "/html/tutorial/lesson8",
         },
         {
           id: 2.9,
           title: "Lesson9",
           titleBn: "পাঠ ৯",
-          path: "/tutorial/lesson9",
+          path: "/html/tutorial/lesson9",
         },
         {
-          id: 2.1,
+          id: 2.10,
           title: "Lesson10",
           titleBn: "পাঠ ১০",
-          path: "/tutorial/lesson10",
+          path: "/html/tutorial/lesson10",
         },
         {
           id: 2.11,
           title: "Lesson11",
           titleBn: "পাঠ ১১",
-          path: "/tutorial/lesson11",
+          path: "/html/tutorial/lesson11",
         },
         {
           id: 2.12,
           title: "Lesson12",
           titleBn: "পাঠ ১২",
-          path: "/tutorial/lesson12",
+          path: "/html/tutorial/lesson12",
         },
       ],
     },
@@ -165,7 +173,7 @@ function SideBar({ isHiden = true, setShow }) {
       title: "All Tags",
       titleBn: "সমস্ত ট্যাগ",
       icon: Tags,
-      path: "/allTag",
+      path: "/html/allTag",
     },
     {
       id: 13,
@@ -288,6 +296,7 @@ function SideBar({ isHiden = true, setShow }) {
               <NavLink
                 aria-label={item?.path}
                 to={item?.path}
+                end={item?.path === "/" || item?.path === "/html"}
                 className={({ isActive }) =>
                   `flex items-center gap-3 p-2 rounded-lg hover:bg-[#E0F2FF] transition ${
                     isActive ? "bg-[#bfe2fd] " : ""
